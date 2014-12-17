@@ -14,3 +14,5 @@ Returns by default are json.
 This tester is meant for validating the functionality of an API key or method.
 
 Only API methods from version 1.0.4 are used.
+
+This tester only tests the GETS calls as shown in the current docs. This functions like a super super basic swagger.
