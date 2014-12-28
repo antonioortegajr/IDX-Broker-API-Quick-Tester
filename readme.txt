@@ -11,7 +11,7 @@ http://middleware.idxbroker.com/docs/api/1.1/index.php
 
 This is a simple tester of API keys and calls to the IDX Broker API system.
 
-All GET calls.
+All GETs.I will not be adding and PUT, POST, or DELETEs to this tester.
 
 Not all calls are available in this tester.
 
