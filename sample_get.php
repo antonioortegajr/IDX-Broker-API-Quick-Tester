@@ -62,17 +62,41 @@ switch ($code) {
 	case 200:
 	echo " We all good";
 	break;
+	case 204:
+	echo " We all good, nothing returned because there is no data to return for this call.";
+	break;
+	case 400:
+	echo " Required parameter missing or invalid.";
+	break;
+	case 401:
+	echo " API key not valid or revoked. Reset the key in middleware if needed. Create ticekt if that fails.";
+	break;
+	case 403:
+	echo " Call made not using SSL(https). This is not something IDX Broker can control. The hosting provider making the API call will need to enable SSL.";
+	break;
+	case 405:
+	echo " Method requested is invalid. Check code making the call.";
+	break;
 	case 406:
 	echo " No API Key provided";
 	break;
 	case 409:
-	echo " bad key";
+	echo " Invalid API component specified. Check code making the call.";
 	break;
 	case 412:
-	echo " over api limit";
+	echo " Over hourly API limit. Wait until the hourly limit resets or the key can be revoked.";
 	break;
 	case 404:
 	echo " The requested URL was not found on this server.";
+	break;
+	case 500:
+	echo " General system error. A ticket will need to be created";
+	break;
+	case 503:
+	echo " Scheduled or emergency API maintenance will result in 503 errors.";
+	break;
+	case 521:
+	echo " Temporary error. There is a possibility that not all API methods are affected.";
 	break;
 }
 
