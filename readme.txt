@@ -16,3 +16,5 @@ This tester is meant for validating the functionality of an API key or method.
 Only API methods from version 1.0.4 are used.
 
 This tester only tests the GETS calls as shown in the current docs. This functions like a super super basic swagger.
+
+This API tester Version 1 is not depricated. See Tester V2 for more calls and API info.
