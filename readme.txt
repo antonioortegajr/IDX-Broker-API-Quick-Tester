@@ -15,7 +15,7 @@ All GETs.I will not be adding and PUT, POST, or DELETEs to this tester.
 
 Not all calls are available in this tester.
 
-Returns by default are json.
+Returns by default are json. Unless otherwise specified in middleware.
 
 This tester is meant for validating the functionality of an API key or method.
 
