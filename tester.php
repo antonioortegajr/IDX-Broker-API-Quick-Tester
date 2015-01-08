@@ -150,7 +150,7 @@ xmlhttp.send();
 <h2>Request Headers</h2>
 Content-Type: application/x-www-form-urlencoded //required<br><br>
 API Key: <input type="text" id="api_key" value="" placeholder=""> //required<br><br>
-Ancillary Key: <input type="text" id="ancillary" value="" placeholder="This is the partner level key"> // optional<br><br>
+Ancillary Key: <input type="text" id="ancillary" value="" placeholder="This is the partner level key and is used to raise the rate limit to 750 calls per hour"> // optional<br><br>
 Output: <select type="text" id="out" value="">
 <option value="json">json</option>
   <option value="xml">xml</option>
