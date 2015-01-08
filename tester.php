@@ -141,7 +141,7 @@ xmlhttp.send();
 <div class="styled-select" id="method">
 <select type="text" id="meth" value="">
 <option value="">First Choose Component</option>
-</select></div>/
+</select></div>
 <input type="text" id="url_end" value="" placeholder="primary, secondary request ID ?optional query string"></h3>
 
 
