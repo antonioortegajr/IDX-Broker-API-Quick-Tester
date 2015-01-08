@@ -142,7 +142,7 @@ xmlhttp.send();
 <select type="text" id="meth" value="">
 <option value="">First Choose Component</option>
 </select></div>
-<input type="text" id="url_end" value="" placeholder="/primary, secondary request ID or ?optional query string"></h3>
+<input type="text" id="url_end" value="" placeholder="add /primary, secondary request ID or ?optional query string"></h3>
 
 
 
