@@ -18,6 +18,10 @@ h3 {
 font-size: 1.5em;
 }
 
+#ropts{
+display:inline;
+}
+
 .styled-select {
    width: 240px;
    height: 34px;
@@ -41,6 +45,7 @@ font-size: 1.5em;
 </style>
 
 <script>
+
 //create a startDatetime for url endpoint
 function startdate() {
     var d = new Date();
@@ -51,6 +56,7 @@ var m = 1 + d.getUTCMonth();
 var sdt = l+"-"+m+"-"+n;
     document.getElementById("demo").innerHTML = "startDatetime="+sdt+"+23:59:59";
 };
+
 
 //change the method by the component selected
 
@@ -82,6 +88,23 @@ document.getElementById("method").innerHTML = '<select type="text" id="meth" val
 };
 
 };
+
+
+//additional IDs or query
+
+function options(o){
+
+if (o == "id"){
+ document.getElementById("ropts").innerHTML='<input type="text" id="url_end" value="" placeholder="add / and primary request ID, and or secondary request ID">';
+}
+
+else {
+ document.getElementById("ropts").innerHTML='<input type="text" id="url_end" value="" placeholder="add a ? and query string if needed">';
+}
+
+};
+
+
 
 
 
@@ -141,8 +164,8 @@ xmlhttp.send();
 <div class="styled-select" id="method">
 <select type="text" id="meth" value="">
 <option value="">First Choose Component</option>
-</select></div>
-<input type="text" id="url_end" value="" placeholder="add /primary, secondary request ID or ?optional query string if needed"></h3>
+</select></div><div id="ropts"> <input type="button" onclick="options('id')" value="Add Optional Request IDs"> or <input type="button" onclick="options('query')" value="Add Optional ?query"></div>
+<div id="id_query"></div></h3>
 
 
 
