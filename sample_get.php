@@ -8,10 +8,12 @@ $ancillary = $_REQUEST["q_ancillary"];
 $out = $_REQUEST["q_out"];
 $version = $_REQUEST["q_version"];
 
-$baseurl = 'https://api.idxbroker.com/';
+$baseurl = 'https://api.idxbroker.com';
 $component = $_REQUEST["q_component"];
 
-$url = $baseurl . $component . '/' . $url_end;
+
+
+$url = $baseurl . '/' .$component . '/' . $url_end;
 
 
 
@@ -35,6 +37,15 @@ curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($handle, CURLOPT_SSL_VERIFYHOST, false);
 curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, false);
 
+/*
+if ($method != 'GET'){
+	curl_setopt($handle, CURLOPT_CUSTOMREQUEST, $method);
+// send the data
+curl_setopt($handle, CURLOPT_POSTFIELDS, $data);
+}
+
+*/
+
 // exec the cURL request and returned information. Store the returned HTTP code in $code for later reference
 $response = curl_exec($handle);
 $code = curl_getinfo($handle, CURLINFO_HTTP_CODE);
@@ -47,87 +58,78 @@ curl_setopt($handle, CURLOPT_HEADER, 1);
 
 
 
-//Get the response headers and the body, use explode() to seperate the two at the first { then add the { back to the body
+//Get the response headers and the body, use explode() to seperate the two at the first { then add the { back to the body if json. Else explode at <
+if ($out == 'json'){
+ 
+ 
 $response = curl_exec($handle);
 $code = curl_getinfo($handle, CURLINFO_HTTP_CODE);
 $b_response = (explode('{', $response, 2));
-$return_array = '{'.$b_response[1];
-$h_response = '';
+$e ='{';
+}
+ 
+  else{
+ 
+    $response = curl_exec($handle);
+    $code = curl_getinfo($handle, CURLINFO_HTTP_CODE);
+    $b_response = (explode('<', $response, 2));
+    $e = '<';
+  };
+ 
+//if response body is empty do se e variable to also nothing
+  $rebod= strlen($b_response[1]);
+  if($rebod == 0){ $e = '';}
 
 
 
 // echo http responce code
 echo $code;
 switch ($code) {
-	case 200:
-	echo " We all good";
-	break;
-	case 204:
-	echo " We all good, nothing returned because there is no data to return for this call.";
-	break;
-	case 400:
-	echo " Required parameter missing or invalid.";
-	break;
-	case 401:
-	echo " API key not valid or revoked. Reset the key in middleware if needed. Create ticekt if that fails.";
-	break;
-	case 403:
-	echo " Call made not using SSL(https). This is not something IDX Broker can control. The hosting provider making the API call will need to enable SSL.";
-	break;
-	case 405:
-	echo " Method requested is invalid. Check code making the call.";
-	break;
-	case 406:
-	echo " No API Key provided";
-	break;
-	case 409:
-	echo " Invalid API component specified. Check code making the call.";
-	break;
-	case 412:
-	echo " Over hourly API limit. Wait until the hourly limit resets or the key can be revoked.";
-	break;
-	case 404:
-	echo " The requested URL was not found on this server.";
-	break;
-	case 500:
-	echo " General system error. A ticket will need to be created";
-	break;
-	case 503:
-	echo " Scheduled or emergency API maintenance will result in 503 errors.";
-	break;
-	case 521:
-	echo " Temporary error. There is a possibility that not all API methods are affected.";
-	break;
+    case 200:
+        echo " We all good";
+        break;
+        case 406:
+        echo " No API Key provided";
+        break;
+    case 409:
+        echo " bad key";
+        break;
+    case 412:
+        echo " i equals 1";
+        break;
+    case 404:
+        echo " The requested URL was not found on this server.";
+        break;
 }
 
 
 echo '</b><br><br>API key used: <b>';
 
-	echo $api_key;
+echo $api_key;
 
-	echo '</b><br>';
+echo '</b><br>';
 
-	echo '<br>URL used: ' . $url;
+echo '<br>URL used: ' . $url;
 
-	echo '<br>Total Time: '. $total_time . ' (Total transaction time in seconds for last transfer)';
+echo '<br>Total Time: '. $total_time . ' (Total transaction time in seconds for last transfer)';
 
-	echo '<br>Time to establish connection: ' . $connect_time;
+echo '<br>Time to establish connection: ' . $connect_time;
 
-	echo '<br>Average download speed: '. $avg_down_speed;
+echo '<br>Average download speed: '. $avg_down_speed;
 
-	echo '<br>Total download size: '. $total_download_size . ' bytes<br>';
+echo '<br>Total download size: '. $total_download_size . ' bytes<br>';
 
-	echo '<br><b>Request headers sent: </b>'; echo var_dump($headers);
+echo '<br><b>Request headers sent: </b>'; echo var_dump($headers);
 
-	echo '<br><br><b>Returned headers: </b>'; echo var_dump($b_response[0]);
+echo '<br><br><b>Returned headers: </b>'; echo var_dump($b_response[0]);
 
-	echo '<br><hr><b>API Response: </b><br>';
-
-
-	var_dump($return_array);
+echo '<br><hr><b>API Response: </b><br>';
 
 
+echo $e . $b_response[1];
 
 
 
-	?>
+	
+
+?>
