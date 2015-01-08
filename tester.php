@@ -42,6 +42,8 @@ display:inline;
    -webkit-appearance: none;
    }
    
+   
+   
 </style>
 
 <script>
@@ -165,7 +167,7 @@ xmlhttp.send();
 <select type="text" id="meth" value="">
 <option value="">First Choose Component</option>
 </select></div><div id="ropts"> <input type="button" onclick="options('id')" value="Add Optional Request IDs"> or <input type="button" onclick="options('query')" value="Add Optional ?query"></div>
-<div id="id_query"></div></h3>
+<div id="id_query"><input style="display:none;" type="text" id="url_end" value="" placeholder="placeholder"></div></h3>
 
 
 
