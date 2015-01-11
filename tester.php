@@ -57,11 +57,11 @@ display:inline;
         }
 
         .button-success {
-            background: rgb(28, 184, 65); /* this is a green */
+            background: rgb(28, 184, 65); 
         }
 
         .button-error {
-            background: rgb(202, 60, 60); /* this is a maroon */
+            background: rgb(202, 60, 60); 
         }
 
         .button-warning {
@@ -199,7 +199,7 @@ color:white !Important; text-decoration:none;
 function startdate(int) {
     var d = new Date();
 var l = d.getUTCFullYear();
-// plus one because arrays start a zero
+
 var m = d.getUTCMonth();
     var n = d.getUTCDate();
     var h = d.getHours();
