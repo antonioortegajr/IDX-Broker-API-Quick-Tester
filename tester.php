@@ -2,7 +2,7 @@
 <head>
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 <title>You &#9829; API</title>
-<!-- this code is presented as is. If you have improvments source is avialable -->
+<!-- this code is presented as is. If you have improvements source is available -->
 
 <style>
 body {
