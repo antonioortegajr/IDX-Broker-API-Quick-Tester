@@ -166,10 +166,29 @@ $j_user_level = '10605';
 else{
 $j_user_level = '10602';
 };
+//check for empty values
+if($api_key == ''){
+$api_key = 'None Used';
+};
+
+
+if($out == ''){
+$out = 'Not specified in request';
+};
+
+
+if($version == ''){
+$version = 'Not specified in request';
+};
+
+
 
 $j_summary = 'API issue';
+$j_url = $url;
+$j_url_end_point_amp = str_replace("&","%26",$j_url);
+$j_url_end_point = str_replace("+","%2B",$j_url_end_point_amp);
 
-$j_description  = 'returned+error+code:+' . $code . '+To+replicate+this+issue+make+an+API+GET+call+using+the+following+endpoint:+' . $url . '+API+key:+'. $api_key . '+output+requested:+' . $out . '+version+requested:+' . $version;
+$j_description  = 'Summary:%0A%0AExpected+Behavior:%0A%0AActual+Behavior:%0AReturned+error+code:+' . $code . '%0A%0A+%0ASteps+to+replicate+this+issue:%0A+*+API+GET+call+using+the+following+endpoint:+' . $j_url_end_point . '+%0A+*+API+key:+'. $api_key . '+%0A+*+output+requested:+' . $out . '+%0A+*+version+requested:+' . $version;
 
 $issue_link = 'http://jira.idx.local/jira/secure/CreateIssueDetails!init.jspa?pid=10300&issuetype=1&priority=3&customfield_11400=' . $j_environment . '&customfield_11603=' . $j_user_level . '&components=10503&summary=' . $j_summary . '&description=' . $j_description;
 
