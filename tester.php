@@ -269,7 +269,7 @@ switch (sel_component) {
   document.getElementById("method").innerHTML = '<select type="text" id="meth" value=""><option value="">Choose Method</option><option value="listcomponents"> listcomponents </option><option value="listmethods"> listmethods </option><option value="clients"> clients </option><option value="propertytypes"> propertytypes </option><option value="aggregatedleads"> aggregatedleads </option><option value="aggregatedsearches"> aggregatedsearches </option><option value="aggregatedproperties"> aggregatedproperties </option><option value="aggregatedleadtraffic"> aggregatedleadtraffic </option><option value="aggregatedfeatured"> aggregatedfeatured </option><option value="aggregatedsupplemental"> aggregatedsupplemental </option><option value="aggregatedsoldpending"> aggregatedsoldpending </option><option value="aggregatedlistingstatus"> aggregatedlistingstatus </option><option value="aggregatedagents"> aggregatedagents </option></select>';
 document.getElementById("use_p_key").innerHTML = '//required. Use Partner level key for these calls';
 document.getElementById("docs").innerHTML = '<a href="http://middleware.idxbroker.com/docs/api/1.1/' + p_comp +'.php" target="_blank"><button class="button-secondary">API Docs: http://middleware.idxbroker.com/docs/api/1.1/' + p_comp +'.php</button></a>';
-document.getElementById("anc_key").innerHTML = '';
+document.getElementById("anc_key").innerHTML = '<input type="text" id="ancillary" value="" placeholder="This is the partner level key and is used to raise the rate limit to 750 calls per hour" style="display:none;">';
 
  break;
   case "mls":
