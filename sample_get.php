@@ -148,7 +148,7 @@ switch ($code) {
         break;
 }
 
-//create jira link
+//create jira ticketing link. You can remove this area if not needed.
 
 
 //set live or sandbox for jira link
@@ -159,7 +159,7 @@ else{
 $j_environment = '10301';
 };
 
-//set user level for jira link
+//set user level for jira link.
 if ($component == 'partners'){
 $j_user_level = '10605';
 }
@@ -187,10 +187,13 @@ $j_summary = 'API issue';
 $j_url = $url;
 $j_url_end_point_amp = str_replace("&","%26",$j_url);
 $j_url_end_point = str_replace("+","%2B",$j_url_end_point_amp);
+$internal_jira_link = 'YourlinktoJira';
 
 $j_description  = 'Summary:%0A%0AExpected+Behavior:%0A%0AActual+Behavior:%0AReturned+error+code:+' . $code . '%0A%0A+%0ASteps+to+replicate+this+issue:%0A+*+API+GET+call+using+the+following+endpoint:+' . $j_url_end_point . '+%0A+*+API+key:+'. $api_key . '+%0A+*+output+requested:+' . $out . '+%0A+*+version+requested:+' . $version;
 
-$issue_link = 'http://jira.idx.local/jira/secure/CreateIssueDetails!init.jspa?pid=10300&issuetype=1&priority=3&customfield_11400=' . $j_environment . '&customfield_11603=' . $j_user_level . '&components=10503&summary=' . $j_summary . '&description=' . $j_description;
+$issue_link = 'http://' . $internal_jira_link . '/jira/secure/CreateIssueDetails!init.jspa?pid=10300&issuetype=1&priority=3&customfield_11400=' . $j_environment . '&customfield_11603=' . $j_user_level . '&components=10503&summary=' . $j_summary . '&description=' . $j_description;
+
+//end jira ticking section
 
 echo '</b><br><h3 class="flag"><div id="j_link"><a href="' . $issue_link . '" target="_blank">Create Issue in jira</a></div></h3>';
 
