@@ -51,28 +51,12 @@ $total_download_size = curl_getinfo($handle, CURLINFO_SIZE_DOWNLOAD);
 $connect_time = curl_getinfo($handle, CURLINFO_CONNECT_TIME);
 //returns the response headers
 curl_setopt($handle, CURLOPT_HEADER, 1);
-//Get the response headers and the body, use explode() to seperate the two at the first { then add the { back to the body if json. Else explode at <
-if ($out == 'json'){
 
 
-  $response = curl_exec($handle);
-  $code = curl_getinfo($handle, CURLINFO_HTTP_CODE);
-  $b_response = (explode('{', $response, 2));
-  $e ='{';
-}
-
-else{
-
-  $response = curl_exec($handle);
-  $code = curl_getinfo($handle, CURLINFO_HTTP_CODE);
-  $b_response = (explode('<', $response, 2));
-  $e = '<';
-};
-
-//if response body is empty do se e variable to also nothing
-$rebod = strlen($b_response[1]);
-
-if($rebod == 0){ $e = '';}
+//Get the response headers and the body, use explode() to seperate into two at the first 'keep-alive' which is always at the end of the return headers
+$response = curl_exec($handle);
+$code = curl_getinfo($handle, CURLINFO_HTTP_CODE);
+$b_response = (explode('keep-alive', $response, 2));
 
 
 // add random emoji
@@ -201,8 +185,10 @@ echo '<br><br>API key used: <b>';
   echo '<br>Time to establish connection: ' . $connect_time;
   echo '<br>Average download speed: '. $avg_down_speed;
   echo '<br>Total download size: '. $total_download_size . ' bytes<br>';
-  echo '<br><b>Request headers sent: </b>'; echo var_dump($headers);
-  echo '<br><br><b>Returned headers: </b>'; echo var_dump($b_response[0]);
+  echo '<br><b>Request headers sent: </b>';
+  echo var_dump($headers);
+  echo '<br><br><b>Returned headers: </b>';
+  echo var_dump($b_response[0]) . 'keep-alive';
   echo '<br><hr><b>API Response Body: ' . $check_json . '</b><br>';
   echo $e . $b_response[1];
 
