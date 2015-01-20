@@ -8,6 +8,17 @@ $out = $_REQUEST["q_out"];
 $version = $_REQUEST["q_version"];
 $component = $_REQUEST["q_component"];
 $meth = $_REQUEST["q_meth"];
+
+//eggs
+$key_length = strlen($api_key);
+if ($key_length != 22){
+
+  include 'eggs.php';
+}
+
+else{
+
+
 //test for sandbox url
 if ($url_live == 0){
   $baseurl = 'https://api.idxbroker.com';
@@ -52,8 +63,12 @@ $response = curl_exec($handle);
 $code = curl_getinfo($handle, CURLINFO_HTTP_CODE);
 $b_response = (explode('keep-alive', $response, 2));
 
+$api_response_body = $b_response[1];
 
-// add random emoji
+}
+
+
+// add random emoji to status code
 $good_emoji = array("(ʘ෴̴͜ʘ)", "✌(◕‿-)✌", "◦°˚\(*❛‿❛)/˚°◦", "ᕕ( ᐛ )ᕗ", "\( ﾟヮﾟ)/", "(๑╹ڡ╹)╭ ～ ♡", "♪~♪ ヽ໒(⌒o⌒)७ﾉ ♪~♪", "☆*✲ﾟ*｡(((´♡‿♡`+)))｡*ﾟ✲*☆", "(-‿◦☀)", "(*⸰‿-)", "|ʘ‿ʘ)╯", "◉‿◉", "｡◕‿◕｡", "(•̀ᴗ•́)و ̑̑", "~(˘▾˘~)", "( ᵕ́ૢ‧̮ᵕ̀ૢ)‧̊·*", "⊂(◉‿◉)つ", "₍₍⁽⁽(ી(^‿ゝ^)ʃ)₎₎⁾⁾", "೭੧(❛▿❛✿)੭೨", "(●⌃ٹ⌃)", "꒰⁎❛⃘ੌ ᵕ ❛⃘ੌ⁎꒱", "(⋈･◡･)✰", "(❍❛‿❛❍❋)", "ꉂꉂ ( ˆᴗˆ )", "☝( ◠‿◠ )☝");
 $good_count = count($good_emoji);
 $randy = rand(0, $good_count);
@@ -81,7 +96,7 @@ switch ($code) {
   echo " The requested URL was not found on this server. Check the API endpoint you used. " . $bad_emoji[$bad_randy];
   break;
   case 406:
-  echo " No API Key provided. (╯°□°)╯︵  ʎǝʞ IԀ∀";
+  echo " No API Key provided this call was not run. (╯°□°)╯︵  ʎǝʞ IԀ∀";
   break;
   case 409:
   echo " Duplicate unique data detected. " . $bad_emoji[$bad_randy];
@@ -168,12 +183,8 @@ switch (json_last_error()) {
 
 };
 
-$api_response_body = $b_response[1];
 
 //results of tests
-
-echo $bracket_in_response;
-echo '</b><br>';
 echo '<br><br>API key used: <b>';
   echo $api_key;
   echo '</b><br>';
