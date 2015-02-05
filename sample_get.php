@@ -9,6 +9,8 @@ $version = $_REQUEST["q_version"];
 $component = $_REQUEST["q_component"];
 $meth = $_REQUEST["q_meth"];
 
+
+
 //eggs
 $key_length = strlen($api_key);
 if ($key_length != 22){
@@ -25,7 +27,7 @@ if ($url_live == 0){
 }
 else{
   $baseurl = 'http://api.idxsandbox.com';
-};
+}
 //change amp back to & and plus back to +
 $url_end = str_replace("!amp!","&",$url_end);
 $url_end = str_replace("!plus!","+",$url_end);
@@ -46,6 +48,8 @@ curl_setopt($handle, CURLOPT_HTTPHEADER, $headers);
 curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($handle, CURLOPT_SSL_VERIFYHOST, false);
 curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($handle, CURLOPT_HEADER, 1);
+//Get the response headers and the body, use explode() to seperate into two at the first 'keep-alive' which is always at the end of the return headers
 
 // exec the cURL request and returned information. Store the returned HTTP code in $code for later reference
 $response = curl_exec($handle);
@@ -55,11 +59,7 @@ $avg_down_speed = curl_getinfo($handle, CURLINFO_SPEED_DOWNLOAD);
 $total_download_size = curl_getinfo($handle, CURLINFO_SIZE_DOWNLOAD);
 $connect_time = curl_getinfo($handle, CURLINFO_CONNECT_TIME);
 //returns the response headers
-curl_setopt($handle, CURLOPT_HEADER, 1);
-//Get the response headers and the body, use explode() to seperate into two at the first 'keep-alive' which is always at the end of the return headers
 
-
-$response = curl_exec($handle);
 $code = curl_getinfo($handle, CURLINFO_HTTP_CODE);
 $b_response = (explode('keep-alive', $response, 2));
 
