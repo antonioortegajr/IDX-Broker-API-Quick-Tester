@@ -20,14 +20,6 @@ if ($key_length != 22){
 
 else{
 
-
-//test for sandbox url
-if ($url_live == 0){
-  $baseurl = 'https://api.idxbroker.com';
-}
-else{
-  $baseurl = 'http://api.idxsandbox.com';
-}
 //change amp back to & and plus back to +
 $url_end = str_replace("!amp!","&",$url_end);
 $url_end = str_replace("!plus!","+",$url_end);
@@ -117,39 +109,6 @@ switch ($code) {
   echo " Temporary error. There is a possibility that not all API methods are affected. Test and create tickets for affected methods. " . $bad_emoji[$bad_randy];
   break;
 }
-
-//create jira link
-//set live or sandbox for jira link
-if ($url_live == 0){
-  $j_environment = '10300';
-}
-else{
-  $j_environment = '10301';
-};
-//set user level for jira link
-if ($component == 'partners'){
-  $j_user_level = '10605';
-}
-else{
-  $j_user_level = '10602';
-};
-//check for empty values
-if($api_key == ''){
-  $api_key = 'None Used';
-};
-if($out == ''){
-  $out = 'Not specified in request';
-};
-if($version == ''){
-  $version = 'Not specified in request';
-};
-$j_summary = 'API issue';
-$j_url = $url;
-$j_url_end_point_amp = str_replace("&","%26",$j_url);
-$j_url_end_point = str_replace("+","%2B",$j_url_end_point_amp);
-$j_description  = 'Summary:%0A%0AExpected+Behavior:%0A%0AActual+Behavior:%0AReturned+error+code:+' . $code . '%0A%0A+%0ASteps+to+replicate+this+issue:%0A+*+API+GET+call+using+the+following+endpoint:+' . $j_url_end_point . '+%0A+*+API+key:+'. $api_key . '+%0A+*+output+requested:+' . $out . '+%0A+*+version+requested:+' . $version;
-$issue_link = 'http://jira.idx.local/jira/secure/CreateIssueDetails!init.jspa?pid=10300&issuetype=1&priority=3&customfield_11400=' . $j_environment . '&customfield_11603=' . $j_user_level . '&components=10503&summary=' . $j_summary . '&description=' . $j_description;
-echo '</b><br><h3 class="flag"><div id="j_link"><a href="' . $issue_link . '" target="_blank">Create Issue in jira</a></div></h3>';
 
 
 //use json_decode() to validate the response
