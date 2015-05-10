@@ -6,7 +6,7 @@ if($api_key == ""){
   $code = 406;
 }
 else{
-  $code = 200;
+  $code = 'Invalid Key. No API call made';
 }
 
 $api_key = strtolower($api_key);
