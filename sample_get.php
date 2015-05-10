@@ -9,7 +9,7 @@ $version = $_REQUEST["q_version"];
 $component = $_REQUEST["q_component"];
 $meth = $_REQUEST["q_meth"];
 
-
+$baseurl = 'https://api.idxbroker.com';
 
 //eggs
 $key_length = strlen($api_key);
