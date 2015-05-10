@@ -19,6 +19,6 @@ This tester is meant for validating the functionality of an API key or method.
 
 This tester only tests the GETS calls as shown in the current docs.
 
-
+Live version here: http://idx-api-tester.herokuapp.com/
 
 
