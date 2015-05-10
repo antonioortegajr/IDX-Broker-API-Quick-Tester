@@ -127,8 +127,6 @@
     a:-webkit-any-link {
       color:white !Important; text-decoration:none;
     }
-    
-
     .red{
       color:red;
     }
@@ -268,14 +266,16 @@
       document.getElementById("debug").innerHTML= "sample_get.php?" + "q_live="+ live_sandy + "&q_component=" + component + "&q_meth=" + meth + "&q_url=" + url_ends + "&q_api_key=" + api_key + "&q_ancillary=" + ancillary + "&q_out=" + out + "&q_version=" + version;
 
 
-  
+    };
+
   </script>
 </head>
 <body>
   <br>
+  <div id="common_issues" class="inline">Common API troubleshooting: <input type="button" onclick="issues('wp')" value="WordPress Plugin" class="button-secondary"><input type="button" onclick="issues('AE')" value="AE themes" class="button-secondary"><input type="button" onclick="issues('fb')" value="fb app" class="button-secondary"></div>
   <div id="docs" class="inline"><button class="button-secondary">
     API Docs: <a href="http://middleware.idxbroker.com/docs/api/1.1/index.php" target="_blank">http://middleware.idxbroker.com/docs/api/1.1/index.php</button></a>
-  </div>
+  </div><div class="inline" style="font-size: 2.5em; padding-left:50px">You <div id="heart" class="inline"></div><div class="inline" style="padding-left:120px;">API</div></div>
 
   <form action="">
     <h2>API Endpoint</h2>
