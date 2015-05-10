@@ -6,7 +6,6 @@
 
     <style>
     body {
-      font-family: "Comic Sans MS", cursive, sans-serif;
       margin-left:2.5%;
       margin-right:2.5%;
     }
@@ -128,50 +127,11 @@
     a:-webkit-any-link {
       color:white !Important; text-decoration:none;
     }
-    #heart {
-      position: relative;
-      width: 100px;
-      height: 90px;
-    }
-    #heart:before,
-    #heart:after {
-      position: absolute;
-      content: "";
-      left: 50px;
-      top: 0;
-      width: 50px;
-      height: 80px;
-      background: red;
-      -moz-border-radius: 50px 50px 0 0;
-      border-radius: 50px 50px 0 0;
-      -webkit-transform: rotate(-45deg);
-      -moz-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-      -o-transform: rotate(-45deg);
-      transform: rotate(-45deg);
-      -webkit-transform-origin: 0 100%;
-      -moz-transform-origin: 0 100%;
-      -ms-transform-origin: 0 100%;
-      -o-transform-origin: 0 100%;
-      transform-origin: 0 100%;
-    }
-    #heart:after {
-      left: 0;
-      -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-      -o-transform: rotate(45deg);
-      transform: rotate(45deg);
-      -webkit-transform-origin: 100% 100%;
-      -moz-transform-origin: 100% 100%;
-      -ms-transform-origin: 100% 100%;
-      -o-transform-origin: 100% 100%;
-      transform-origin :100% 100%;
-    }
+    
 
-.red{
-color:red;
-}
+    .red{
+      color:red;
+    }
 
   </style>
 
@@ -268,12 +228,12 @@ color:red;
     };
     //ajax to pass url endpoint, component, method, keys, output type and version
     function change(){
-      //for testing
-      var test = "sample_get.php?" + "q_component=" + component + "&q_url=" + url_end + "&q_api_key=" + api_key + "&q_ancillary=" + ancillary + "&q_out=" + out + "&q_version=" + version
+
+      var test = "sample_get.php?" + "q_component=" + component + "&q_url=" + url_end + "&q_api_key=" + api_key + "&q_ancillary=" + ancillary + "&q_out=" + out + "&q_version=" + version;
 
       var live_sandy = document.getElementById("live_sand").value;
       var url_end = document.getElementById("url_end").value;
-      //cahnge the amps and plus signs so they are passed on the ajax call
+      //change the amps and plus signs so they are passed on the ajax call
       var res_amp = url_end.replace(/&/g, "!amp!");
       var res_plus = res_amp.replace(/\+/g, "!plus!");
       var url_ends = res_plus;
@@ -284,11 +244,8 @@ color:red;
       var out = document.getElementById("out").value;
       var version = document.getElementById("version").value;
       var xmlhttp;
-      if (test.length==0)
-      {
-        document.getElementById("api_test").innerHTML="";
-        return;
-      }
+
+
       if (window.XMLHttpRequest)
       {// code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp=new XMLHttpRequest();
@@ -306,37 +263,23 @@ color:red;
       }
       xmlhttp.open("GET","sample_get.php?" + "q_live="+ live_sandy + "&q_component=" + component + "&q_meth=" + meth + "&q_url=" + url_ends + "&q_api_key=" + api_key + "&q_ancillary=" + ancillary + "&q_out=" + out + "&q_version=" + version, true);
       xmlhttp.send();
-    };
-    //Common API issues buttons
-    function issues(i){
-      var is = i;
-      switch (is) {
-        case "wp":
-        alert("Trouble shooting the WordPress plugin begins with making sure the client has the latest version installed.\n\nMatch up any error code the plugin is reporting to the API docs.\nCommon error codes:\n 412(over hourly limit) wait an hour or reset the key in middleware. If you reset the key the client will need to update the key in WP\n\n403(call made without https). This is a SSL hosting issue and not something IDX Broker can do anything to fix. Client should contact the hosting to enable SSL.\n\n If a saved link, widget, etc are not appearing in WP, run the API call and verify the resource is in the return.\n\nElse reproduce issue in your test WP and ticket.");
-        break;
-        case "AE":
-        alert("AE themes use the API to bring in featured listings, saved links, and create search widgets.\n\nFirst verify the client has featured listings. All IDX Broker support can do is verify the API is able to bring in these resources with out error.\n\nFurther support will need to go to AE support.\n\nCheck the version setting in middleware. 1.0.4 should be used for AE themes");
-        break;
-        case "fb":
-        alert("The facebook app uses the featured listings API call to bring in featured listings.\n\nFirst verify the client has featured listings.\nCheck the version setting in middleware. If 1.0.4, test the 1.0.4 featured listings call.\n\nIf the listings are in the return, but not in the app create a ticket");
-        break;
-        case "helpIDs":
-        alert('The primary ID is an identifying ID for this call. For example a lead ID\n\nThe secondary ID is an ID that relates to the first ID. For example a note in a leads account.\n\nAdd /primaryID or /primaryID/secondaryID to this input to build the API call\n\nSo to get a specific lead you would select the Leads Component and enter slash and the lead ID here, example: /123\n\nTo get say a note for that lead you would select the Leads Component and enter slash lead ID and slash note ID example: /123/456');
-        break;
-        case "helptime":
-        alert('To add a time filter you can specify the following:\n\nstartDatetime: This is the date you want the API call to start returning data from. This UTC format is year-month-date hour:minute:seconds.\nFor example Neil Armstrong took his first step on the moon on July 21 at 02:56 or in UTC format 1969-07-21 02:56:00\n\ninterval: This the number of hours before the startDateTime to return data\n\ndateType: Associated types are subscribeDate, lastEdited, lastLoginDate, lastPropertyUpdateDate, or lastActivityDate\n\nrf: specify the fields you want to return. If flieds are specified, non specified fields will be ignored.\n\n For more examples use the preset time options to generate a query.');
-        break;
 
-      };
+
+      document.getElementById("debug").innerHTML= "sample_get.php?" + "q_live="+ live_sandy + "&q_component=" + component + "&q_meth=" + meth + "&q_url=" + url_ends + "&q_api_key=" + api_key + "&q_ancillary=" + ancillary + "&q_out=" + out + "&q_version=" + version;
+
+
+    };
+
+
+ 
     };
   </script>
 </head>
 <body>
   <br>
-  <div id="common_issues" class="inline">Common API troubleshooting: <input type="button" onclick="issues('wp')" value="WordPress Plugin" class="button-secondary"><input type="button" onclick="issues('AE')" value="AE themes" class="button-secondary"><input type="button" onclick="issues('fb')" value="fb app" class="button-secondary"></div>
   <div id="docs" class="inline"><button class="button-secondary">
     API Docs: <a href="http://middleware.idxbroker.com/docs/api/1.1/index.php" target="_blank">http://middleware.idxbroker.com/docs/api/1.1/index.php</button></a>
-  </div><div class="inline" style="font-size: 2.5em; padding-left:50px">You <div id="heart" class="inline"></div><div class="inline" style="padding-left:120px;">API</div></div>
+  </div>
 
   <form action="">
     <h2>API Endpoint</h2>
@@ -378,6 +321,7 @@ color:red;
           API Version: <select type="text" id="version" value="" class="button-secondary button-xlarge"> //be sure the method you are calling is available this version
             <option value="1.0.4">1.0.4</option>
             <option value="1.1.1">1.1.1</option>
+            <option value="1.2.0">1.2.0</option>
             <option value="">none specified</option>
           </select> //optional and overrides middleware settings
           <br>
@@ -388,5 +332,6 @@ color:red;
         <br>
         <br>
         <hr>
+        <div id="debug"></div>
       </body>
       </html>
