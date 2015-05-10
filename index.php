@@ -279,7 +279,6 @@
       <div class="styled-select">
         <select type="text" id="live_sand" value="">
           <option value="0">https://api.idxbroker.com</option>
-          <option value="1">http://api.idxsandbox.com</option>
         </select>
       </div><div class="slashes inline">/</div>
       <div class="styled-select"</div>
