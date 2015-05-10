@@ -1,7 +1,7 @@
 <html>
 <head>
   <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-    <title>You &#9829; API</title>
+    <title>&#9829; API</title>
     <!-- this code is presented as is. If you have improvements source is available https://github.com/antonioortegajr/IDX-Broker-API-Quick-Tester -->
 
     <style>
@@ -272,11 +272,7 @@
 </head>
 <body>
   <br>
-  <div id="common_issues" class="inline">Common API troubleshooting: <input type="button" onclick="issues('wp')" value="WordPress Plugin" class="button-secondary"><input type="button" onclick="issues('AE')" value="AE themes" class="button-secondary"><input type="button" onclick="issues('fb')" value="fb app" class="button-secondary"></div>
-  <div id="docs" class="inline"><button class="button-secondary">
-    API Docs: <a href="http://middleware.idxbroker.com/docs/api/1.1/index.php" target="_blank">http://middleware.idxbroker.com/docs/api/1.1/index.php</button></a>
-  </div><div class="inline" style="font-size: 2.5em; padding-left:50px">You <div id="heart" class="inline"></div><div class="inline" style="padding-left:120px;">API</div></div>
-
+  
   <form action="">
     <h2>API Endpoint</h2>
     <div id="end_point" class="inline">
