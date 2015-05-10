@@ -268,11 +268,7 @@
       document.getElementById("debug").innerHTML= "sample_get.php?" + "q_live="+ live_sandy + "&q_component=" + component + "&q_meth=" + meth + "&q_url=" + url_ends + "&q_api_key=" + api_key + "&q_ancillary=" + ancillary + "&q_out=" + out + "&q_version=" + version;
 
 
-    };
-
-
- 
-    };
+  
   </script>
 </head>
 <body>
