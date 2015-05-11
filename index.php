@@ -125,11 +125,28 @@
       border-color: #666 #666 transparent transparent;
     }
     a:-webkit-any-link {
-      color:white !Important; text-decoration:none;
+      color: #326de6 !Important; text-decoration:none;
     }
     .red{
       color:red;
     }
+    p {
+  color: #7d7d7d;
+  font-family: "Muli",sans-serif;
+  font-size: 16px;
+
+}
+
+h1 {
+  font-size: 40px;
+  font-family: "Montserrat",sans-serif;
+  font-weight: 700;
+  text-align: center;
+  line-height: normal;
+  letter-spacing: 0em;
+  padding-bottom: 12px;
+color: #002D4A;
+}
 
   </style>
 
@@ -272,15 +289,14 @@
 </head>
 <body>
 <a href="https://github.com/antonioortegajr/IDX-Broker-API-Quick-Tester"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
-  <div><p>This is a simple tester of API keys and calls to the IDX Broker API system.
+<div>
+<h1>Test Calls to the IDX Broker API</h1><p>This is a simple tester of API keys and calls to the IDX Broker API system.
 <br><br>
-All GETs calls.
+All GET calls. Returns by default are json. This tester is meant for validating the functionality of an API key or method.
 <br><br>
-Returns by default are json. Unless otherwise specified in middleware.
-<br><br>
-This tester is meant for validating the functionality of an API key or method.
-<br><br>
-This tester only tests the GETS calls as shown in the current docs.</p></div>
+This only tests GET calls as shown in the <a href="http://middleware.idxbroker.com/docs/api/methods/index.html">current docs</a>. Post questions on the <a href="http://developers.idxbroker.com/forums/forum/api/">IDX Broker Developer forums</a>. Enjoy and happy testing!
+</p><!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/antonioortegajr" data-style="mega" data-count-href="/antonioortegajr/followers" data-count-api="/users/antonioortegajr#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @antonioortegajr on GitHub">Follow @antonioortegajr</a></div>
   <form action="">
     <h2>API Endpoint</h2>
     <div id="end_point" class="inline">
