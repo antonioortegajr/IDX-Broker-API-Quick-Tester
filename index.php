@@ -337,7 +337,7 @@ This only tests GET calls as shown in the <a href="http://middleware.idxbroker.c
             <option value="1.0.4">1.0.4</option>
             <option value="1.1.1">1.1.1</option>
             <option value="1.2.0">1.2.0</option>
-            <option value="1.2.0">1.2.1</option>
+            <option value="1.2.1">1.2.1</option>
             <option value="">none specified</option>
           </select> //optional and overrides middleware settings
           <br>
