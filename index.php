@@ -348,6 +348,6 @@ This only tests GET calls as shown in the <a href="http://middleware.idxbroker.c
         <br>
         <br>
         <hr>
-        <div id="debug"></div>
+        <div id="debug">123</div>
       </body>
       </html>
