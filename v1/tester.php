@@ -37,7 +37,7 @@ font-size: 1.5em;
    height: 34px;
    -webkit-appearance: none;
    }
-   
+
 </style>
 
 <script>
@@ -99,7 +99,7 @@ var version = document.getElementById("version").value;
 
 var xmlhttp;
 if (test.length==0)
-  { 
+  {
   document.getElementById("api_test").innerHTML="";
   return;
   }
@@ -166,7 +166,7 @@ API Version: <select type="text" id="version" value=""> //be sure the method you
 <br>
 <input type="button" onclick="change()" value="Run this API Call" id="gogo">
 </form>
-<div id="api_test"></div>
+<div id="api_test"> </div>
 
 </body>
 </html>
