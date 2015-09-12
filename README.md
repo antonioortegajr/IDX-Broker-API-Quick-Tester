@@ -21,6 +21,7 @@ This tester only tests the GETS calls as shown in the current docs.
 
 Live testing here: http://idx-api-tester.herokuapp.com/
 
-This isn't very pretty.
+This isn't very pretty,
+but I did spend a lot of time writing json responses for pop culture reference when entered as the API key.
 
 Pull requests welcome.
