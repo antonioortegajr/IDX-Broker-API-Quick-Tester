@@ -1,6 +1,7 @@
-READ ME
+#IDX-Broker-API-Quick-Tester
 
-Standard Disclaimer: This code is not official IDX Broker code. It does use their API, but in NO WAY is it supported by IDX Broker. DO NOT contact IDX Broker for any support of this code.
+##Standard Disclaimer: 
+This code is not official IDX Broker code. It does use their API, but in NO WAY is it supported by IDX Broker. DO NOT contact IDX Broker for any support of this code.
 
 
 Updated to new version of this tester.
@@ -11,7 +12,9 @@ http://middleware.idxbroker.com/docs/api/1.1/index.php
 
 This is a very simple tester of API keys and calls to the IDX Broker API.
 
-All GETs calls.
+A valid IDX Broke API key is required.
+
+####All GETs calls.
 
 Returns by default are json. Unless otherwise specified in middleware.
 
@@ -25,3 +28,5 @@ This isn't very pretty,
 but I did spend a lot of time writing json responses for pop culture reference when entered as the API key.
 
 Pull requests welcome.
+
+Enjoy!
