@@ -191,6 +191,7 @@ break;
   break;
   case "witch doctor":
   $api_response_body = "{\"oo\":\"ee\",\"oo\":\"ah ah\",\"ting\":\"tang\",\"Walla Walla\":\"bing bang\"}";
+  break;
   case "mash":
   $api_response_body = "{\"monster mash\":\"y\",\"gravyard smash\":\"y\"}";
   break;
