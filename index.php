@@ -326,7 +326,7 @@ This only tests GET calls as shown in the <a href="http://middleware.idxbroker.c
           <h2>Request Headers</h2>
           Content-Type: application/x-www-form-urlencoded //required<br><br>
           API Key: <input type="text" id="api_key" value="" placeholder=""> <div id="use_p_key" class="inline">//required</div><br><br>
-          <div id="anc_key">Ancillary Key: <input type="text" id="ancillary" value="" placeholder="This is the partner level key and is used to raise the rate limit to 750 calls per hour"> // optional<br><br></div>
+          <div id="anc_key">Ancillary Key: <input type="text" id="ancillary" value="" placeholder="This is the partner level key for partner calls or can be used to raise the rate limit to 750 calls per hour"> // optional<br><br></div>
           Output: <select type="text" id="out" value="" class="button-secondary button-xlarge">
             <option value="json">json</option>
             <option value="xml">xml</option>
