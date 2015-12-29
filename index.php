@@ -217,7 +217,7 @@ color: #002D4A;
         document.getElementById("docs").innerHTML = '<a href="http://middleware.idxbroker.com/docs/api/1.1/' + m_comp +'.php" target="_blank"><button class="button-secondary">API Docs: http://middleware.idxbroker.com/docs/api/1.1/' + m_comp +'.php</button></a>';
         break;
         case "clients":
-        document.getElementById("method").innerHTML = '<select type="text" id="meth" value=""><option value="">Choose Method</option><option value="listcomponents"> listcomponents </option><option value="listmethods"> listmethods </option><option value="agents"> agents </option><option value="offices"> offices </option><option value="systemlinks"> systemlinks </option><option value="savedlinks"> savedlinks </option><option value="widgetsrc"> widgetsrc </option><option value="featured"> featured </option><option value="soldpending"> soldpending </option><option value="supplemental"> supplemental </option><option value="historical "> historical </option><option value="cities"> cities </option><option value="citieslistname"> citieslistname </option><option value="counties"> counties </option><option value="zipcodes"> zipcodes </option><option value="accounttype"> accounttype </option></select>';
+        document.getElementById("method").innerHTML = '<select type="text" id="meth" value=""><option value="">Choose Method</option><option value="listcomponents"> listcomponents </option><option value="listmethods"> listmethods </option><option value="agents"> agents </option><option value="offices"> offices </option><option value="systemlinks"> systemlinks </option><option value="savedlinks"> savedlinks </option><option value="widgetsrc"> widgetsrc </option><option value="featured"> featured </option><option value="soldpending"> soldpending </option><option value="supplemental"> supplemental </option><option value="historical "> historical </option><option value="cities"> cities </option><option value="citieslistname"> citieslistname </option><option value="counties"> counties </option><option value="zipcodes"> zipcodes </option><option value="accounttype"> accounttype </option><option value="postalcodes"> postalcodes </option><option value="postalcodeslistname"> postalcodeslistname </option><option value="countieslistname"> countieslistname </option></select>';
         document.getElementById("docs").innerHTML = '<a href="http://middleware.idxbroker.com/docs/api/1.1/' + c_comp +'.php" target="_blank"><button class="button-secondary">API Docs: http://middleware.idxbroker.com/docs/api/1.1/' + c_comp +'.php</button></a>';
         document.getElementById("anc_key").innerHTML = 'Ancillary Key: <input type="text" id="ancillary" value="" placeholder="This is the partner level key and is used to raise the rate limit to 750 calls per hour"> // optional<br><br>';
         break;
@@ -338,6 +338,7 @@ This only tests GET calls as shown in the <a href="http://middleware.idxbroker.c
             <option value="1.1.1">1.1.1</option>
             <option value="1.2.0">1.2.0</option>
             <option value="1.2.1">1.2.1</option>
+            <option value="1.2.2">1.2.2</option>
             <option value="">none specified</option>
           </select> //optional and overrides middleware settings
           <br>
