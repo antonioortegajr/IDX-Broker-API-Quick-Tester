@@ -91,7 +91,7 @@ switch ($code) {
   echo " No API Key provided this call was not run. (╯°□°)╯︵  ʎǝʞ IԀ∀";
   break;
   case 409:
-  echo " Duplicate unique data detected. " . $bad_emoji[$bad_randy];
+  echo " Invalid API component specified or duplicate unique data detected. " . $bad_emoji[$bad_randy];
   break;
   case 412:
   echo " Over Hourly API limit. Wait an hour and re check or reset key in middleware. " . $bad_emoji[$bad_randy];
