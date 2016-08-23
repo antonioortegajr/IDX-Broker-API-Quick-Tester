@@ -290,7 +290,15 @@ color: #002D4A;
 <body>
 <a href="https://github.com/antonioortegajr/IDX-Broker-API-Quick-Tester"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
 <div>
-<h1>Test Calls to the IDX Broker API</h1><p>This is a simple tester of API keys and calls to the IDX Broker API system. This is moving and will no longer be live as of 1/1/17. The new location is in this repo: https://github.com/antonioortegajr/unofficial-idx-broker-tools
+<h1>Test Calls to the IDX Broker API</h1><p>
+  <br><br>
+  This project has moved:
+<br><br>
+This project will now be available at https://github.com/antonioortegajr/unofficial-idx-broker-tools
+<br><br>
+No new development will occur in this repo and the live tester will come down for it's place on heroku at the end of the year.
+  <br><br>
+  This is a simple tester of API keys and calls to the IDX Broker API system. This is moving and will no longer be live as of 1/1/17. The new location is in this repo: https://github.com/antonioortegajr/unofficial-idx-broker-tools
 <br><br>
 All GET calls. Returns by default are json. This tester is meant for validating the functionality of an API key or method.
 <br><br>
